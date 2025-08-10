@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #cb1111, #2575fc);
+}
+
+.container {
+  position: relative;
+  width: 97vw;
+  height: 95vh;
+	background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)) !important;
+  backdrop-filter: blur(15px) !important;
+  animation: glass-wave 8s ease-in-out infinite !important;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+	background-size: 200% 200%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+@keyframes blur-pulse {
+  0%, 100% {
+    backdrop-filter: blur(15px);
+  }
+  50% {
+    backdrop-filter: blur(18px);
+  }
+}
+
+.container.move-right {
+  transform: translateX(90vw);
+  opacity: 0.8;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  max-width: 90vw;
+
+  /* Начальное состояние - сдвиг вправо + прозрачность 0 */
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(calc(-50% + 30px), -50%);
+  transition:
+    transform 0.8s ease 0.1s,
+    opacity 0.6s ease 0.5s;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form.active {
+  opacity: 1;
+  pointer-events: all;
+
+  /* Появление с сдвигом к центру */
+  transform: translate(-50%, -50%);
+}
+
+.form.move-faster {
+  /* форма двигается быстрее, сдвигаясь дальше */
+  transform: translateX(120vw);
+  opacity: 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.toggle-text {
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Анимация сдвига контейнера */
+
+.container.slide-right {
+  transform: translateX(50px);
+}
+
+.container.slide-left {
+  transform: translateX(0);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login / Signup Slider</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="form login active">
+      <h1>Вход</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Email" />
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Пароль" />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <button class="btn">Войти</button>
+      <p class="toggle-text" data-toggle="signup">У меня нет аккаунта</p>
+    </div>
+
+    <div class="form signup">
+      <h1>Регистрация</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Имя" />
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="email" placeholder="Email" />
+        <i class="bx bxs-envelope"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Пароль" />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <button class="btn">Зарегистрироваться</button>
+      <p class="toggle-text" data-toggle="login">У меня уже есть аккаунт</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
