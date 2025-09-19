@@ -17,7 +17,7 @@
 
 ## Демо-видео
 
-**⚠️ Disclaimer:** Позже.
+[![Смотреть демо-видео](./media/photo.jpg)](./media/video.mov)
 
 ---
 
